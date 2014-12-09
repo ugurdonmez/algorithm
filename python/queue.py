@@ -30,18 +30,20 @@ class Queue:
          return True
       else:
          return False
+   
+   def print_queue(self):
+      self.list.list_print()
 
-'''
 q = Queue()
 
 q.add(1)
 q.add(2)
 q.add(3)
 
-print q.peek()
-print q.poll()
-print q.peek()
 print q.poll()
 print q.poll()
+print q.isEmpty()
+
 print q.poll()
-'''
+
+print q.isEmpty()
