@@ -102,7 +102,6 @@ l.add_node_head(3)
 l.add_node_head(4)
 l.add_node_head(5)
 
-print "a"
 l.list_print()
 '''
 

@@ -1,30 +1,29 @@
-# execfile("./linked_list.py")
-
 from linked_list import Linked_list
 
-class Stack:
+class Queue:
    def __init__(self):
       self.list = Linked_list()
       self.size = 0
-
-   def push(self,data):
-      self.list.add_node_head(data)
-      self.size += 1
-
-   def pop(self):
+   
+   def poll(self):
       if self.isEmpty():
          return None
-      else :
-         data = self.top()
+      else:
+         data = self.peek()
+         # linked list should store last element and delete node in O(1)
          self.list.delete_node(data)
          self.size -= 1
          return data
 
-   def top(self):
+   def peek(self):
       if self.isEmpty():
          return None
       else:
          return self.list.get_head().data
+
+   def add(self,data):
+      self.list.add_node(data)
+      self.size += 1
 
    def isEmpty(self):
       if self.size == 0:
@@ -32,19 +31,17 @@ class Stack:
       else:
          return False
 
-
-
 '''
-s = Stack()
+q = Queue()
 
+q.add(1)
+q.add(2)
+q.add(3)
 
-s.push(1)
-
-s.push(2)
-
-print s.pop()
-print s.pop()
-
-
-print s.isEmpty()
+print q.peek()
+print q.poll()
+print q.peek()
+print q.poll()
+print q.poll()
+print q.poll()
 '''
